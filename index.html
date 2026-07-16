@@ -14,7 +14,7 @@
     <nav aria-label="Primary navigation">
       <a href="#why">Why a platform?</a>
       <a href="#architecture">Architecture</a>
-      <a href="#demo">Demo</a>
+      <a href="#pilot">Institutional demo</a>
     </nav>
     <span class="status">Independent fictional demonstration</span>
   </header>
@@ -25,7 +25,7 @@
       <h1>Institutions already have AI. They still need an assessment architecture.</h1>
       <p class="lede">The Socratic Platform turns an institution-approved language model into a structured, faculty-governed process for eliciting and reviewing evidence of learner understanding.</p>
       <div class="actions">
-        <a class="button" href="#demo">Explore the fictional pilot</a>
+        <a class="button" href="#pilot">Launch institutional demonstration</a>
         <a class="button secondary" href="docs/architecture.md">View the architecture</a>
       </div>
       <p class="notice"><strong>Demonstration boundary:</strong> no real learners, institutional systems, proprietary reasoning logic, or production AI services are connected.</p>
@@ -35,16 +35,8 @@
       <p class="eyebrow">The central distinction</p>
       <h2 id="thesis-title">Language intelligence is not the same as educational intelligence.</h2>
       <div class="thesis-grid">
-        <article>
-          <span class="number">01</span>
-          <h3>Institution-approved AI</h3>
-          <p>Interprets language, generates explanations, phrases questions, and summarizes bounded information.</p>
-        </article>
-        <article>
-          <span class="number">02</span>
-          <h3>Socratic educational layer</h3>
-          <p>Defines the evidence need, selects the pedagogical move, tracks learner state, and preserves faculty authority.</p>
-        </article>
+        <article><span class="number">01</span><h3>Institution-approved AI</h3><p>Interprets language, generates explanations, phrases questions, and summarizes bounded information.</p></article>
+        <article><span class="number">02</span><h3>Socratic educational layer</h3><p>Defines the evidence need, selects the pedagogical move, tracks learner state, and preserves faculty authority.</p></article>
       </div>
     </section>
 
@@ -52,29 +44,11 @@
       <div class="section-heading">
         <p class="eyebrow">Why not just use a chatbot?</p>
         <h2 id="why-title">A capable model can converse. An institution needs a repeatable and governed assessment process.</h2>
-        <p>This distinction does not diminish the value of an institutional AI service. The platform makes that service more educationally useful by surrounding it with curriculum, policy, evidence, and review.</p>
+        <p>This distinction does not diminish the value of institutional AI. The platform makes that service more educationally useful by surrounding it with curriculum, policy, evidence, and review.</p>
       </div>
       <div class="comparison-grid">
-        <article>
-          <h3>General or institution-approved AI</h3>
-          <ul>
-            <li>Generates and interprets language</li>
-            <li>Responds to an individual prompt</li>
-            <li>Supports open-ended conversation</li>
-            <li>Explains or summarizes content</li>
-            <li>Depends on the selected model</li>
-          </ul>
-        </article>
-        <article class="emphasis">
-          <h3>Socratic institutional platform</h3>
-          <ul>
-            <li>Operates against explicit learning objectives</li>
-            <li>Selects pedagogical moves from unmet evidence needs</li>
-            <li>Tracks understanding, contradiction, and revision</li>
-            <li>Links claims about learning to transcript evidence</li>
-            <li>Preserves the workflow across AI providers</li>
-          </ul>
-        </article>
+        <article><h3>General or institution-approved AI</h3><ul><li>Generates and interprets language</li><li>Responds to an individual prompt</li><li>Supports open-ended conversation</li><li>Explains or summarizes content</li><li>Depends on the selected model</li></ul></article>
+        <article class="emphasis"><h3>Socratic institutional platform</h3><ul><li>Operates against explicit learning objectives</li><li>Selects pedagogical moves from unmet evidence needs</li><li>Tracks understanding, contradiction, and revision</li><li>Links claims about learning to transcript evidence</li><li>Preserves the workflow across AI providers</li></ul></article>
       </div>
       <p class="claim">This is not another chatbot. It is a provider-independent educational intelligence layer for structured dialogue, evidence modeling, and faculty-guided judgment.</p>
     </section>
@@ -95,53 +69,125 @@
       </div>
     </section>
 
-    <section class="workflow" aria-labelledby="workflow-title">
-      <div>
-        <p class="eyebrow">Proposed workflow</p>
-        <h2 id="workflow-title">One assessment, multiple kinds of evidence</h2>
+    <section class="pilot" id="pilot" aria-labelledby="pilot-title">
+      <div class="pilot-intro">
+        <p class="eyebrow">Phase 1 · Functional institutional demonstration</p>
+        <h2 id="pilot-title">Follow one fictional assessment from faculty setup to evidence review.</h2>
+        <p>The demonstration is intentionally bounded. It shows the workflow an institution could evaluate before connecting authentication, learner data, an LMS, or an approved model service.</p>
       </div>
-      <ol>
-        <li><span>1</span>Learner submits an initial explanation.</li>
-        <li><span>2</span>The system identifies what evidence is still needed.</li>
-        <li><span>3</span>A targeted Socratic question tests the concept.</li>
-        <li><span>4</span>The understanding map updates across turns.</li>
-        <li><span>5</span>Faculty review a transcript-grounded snapshot.</li>
-      </ol>
-    </section>
 
-    <section class="demo-grid" id="demo" aria-live="polite">
-      <article class="panel dialogue-panel">
-        <div class="panel-heading">
+      <div class="app-shell">
+        <aside class="app-sidebar" aria-label="Demonstration steps">
+          <div class="course-mark">CR</div>
           <div>
-            <p class="eyebrow">Learner view</p>
-            <h2>Validity and soundness</h2>
+            <strong>Critical Reasoning</strong>
+            <span>Institutional Pilot</span>
           </div>
-          <span class="provider">Mock approved AI provider</span>
-        </div>
-        <div id="dialogue" class="dialogue">
-          <p class="empty-state">Select “Start fictional dialogue” to reveal the sample assessment.</p>
-        </div>
-        <div class="panel-actions">
-          <button id="start-demo" type="button">Start fictional dialogue</button>
-          <button id="reset-demo" class="secondary" type="button">Reset</button>
-        </div>
-      </article>
+          <ol id="step-list">
+            <li class="active" data-step="0"><button type="button">1. Faculty setup</button></li>
+            <li data-step="1"><button type="button">2. Learner launch</button></li>
+            <li data-step="2"><button type="button">3. Dialogue</button></li>
+            <li data-step="3"><button type="button">4. Faculty review</button></li>
+            <li data-step="4"><button type="button">5. Provider boundary</button></li>
+          </ol>
+          <p class="demo-label">Fictional data only</p>
+        </aside>
 
-      <aside class="panel evidence-panel" aria-labelledby="evidence-title">
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow">Faculty view</p>
-            <h2 id="evidence-title">Evidence snapshot</h2>
+        <div class="app-main">
+          <div class="app-topbar">
+            <div><span id="view-kicker">Faculty workspace</span><strong id="view-title">Assessment setup</strong></div>
+            <div class="topbar-actions"><span class="provider">Mock approved AI provider</span><button id="reset-demo" class="text-button" type="button">Reset demo</button></div>
           </div>
+
+          <section class="demo-view active" id="view-0" aria-labelledby="setup-heading">
+            <div class="workspace-grid">
+              <article class="workspace-card wide">
+                <p class="eyebrow">Faculty setup</p>
+                <h3 id="setup-heading">Validity and soundness dialogue</h3>
+                <dl class="details-grid">
+                  <div><dt>Course</dt><dd>Foundations of Critical Reasoning</dd></div>
+                  <div><dt>Module</dt><dd>Argument Evaluation</dd></div>
+                  <div><dt>Mode</dt><dd>Structured Socratic dialogue</dd></div>
+                  <div><dt>Faculty role</dt><dd>Final reviewer</dd></div>
+                </dl>
+                <h4>Learning objective</h4>
+                <p>Distinguish validity from soundness and apply the distinction to a novel argument.</p>
+                <h4>Evidence requirements</h4>
+                <div class="chip-row"><span>Definition</span><span>Distinction</span><span>Application</span><span>Revision if needed</span></div>
+              </article>
+              <aside class="workspace-card">
+                <p class="eyebrow">Knowledge pack</p>
+                <h3>Course-aligned constraints</h3>
+                <ul class="check-list"><li>Target concepts defined</li><li>Common misconception included</li><li>Application prompt available</li><li>Faculty review required</li></ul>
+              </aside>
+            </div>
+            <div class="view-actions"><button class="advance" data-next="1" type="button">Launch learner experience</button></div>
+          </section>
+
+          <section class="demo-view" id="view-1" aria-labelledby="learner-heading" hidden>
+            <div class="learner-header">
+              <div><p class="eyebrow">Learner experience</p><h3 id="learner-heading">Reasoning through dialogue</h3></div>
+              <span class="progress-pill">Estimated time: 5 minutes</span>
+            </div>
+            <article class="assessment-brief">
+              <strong>Learning objective</strong>
+              <p>Explain what makes an argument valid and demonstrate the distinction between validity and truth.</p>
+              <div class="concept-row"><span>Validity</span><span>Premise</span><span>Conclusion</span><span>Soundness</span></div>
+            </article>
+            <article class="prompt-card">
+              <span class="role-label">Socratic coach</span>
+              <p>Can an argument be valid even when its conclusion is false? Explain your answer.</p>
+            </article>
+            <label class="response-label" for="learner-response">Fictional learner response</label>
+            <textarea id="learner-response" rows="5">Yes. Validity is about whether the conclusion follows from the premises, not whether the premises are actually true.</textarea>
+            <div class="view-actions"><button class="advance" data-next="2" type="button">Submit and analyze response</button></div>
+          </section>
+
+          <section class="demo-view" id="view-2" aria-labelledby="dialogue-heading" hidden>
+            <div class="dialogue-layout">
+              <article class="workspace-card dialogue-card">
+                <div class="card-heading"><div><p class="eyebrow">Live dialogue</p><h3 id="dialogue-heading">Validity and soundness</h3></div><span id="turn-count">Turn 1 of 3</span></div>
+                <div id="dialogue" class="dialogue" aria-live="polite"></div>
+                <div class="dialogue-actions"><button id="next-turn" type="button">Continue dialogue</button><button id="replay-dialogue" class="secondary" type="button">Replay</button></div>
+              </article>
+              <aside class="intelligence-column">
+                <article class="workspace-card intelligence-card">
+                  <p class="eyebrow">Educational intelligence</p>
+                  <h3>Why this question?</h3>
+                  <dl id="decision-panel" class="decision-list"></dl>
+                </article>
+                <article class="workspace-card">
+                  <p class="eyebrow">Live evidence</p>
+                  <div id="evidence-bars" class="evidence-bars"></div>
+                </article>
+              </aside>
+            </div>
+            <div class="view-actions"><button id="open-review" class="advance" data-next="3" type="button" disabled>Open faculty review</button></div>
+          </section>
+
+          <section class="demo-view" id="view-3" aria-labelledby="review-heading" hidden>
+            <div class="review-heading"><div><p class="eyebrow">Faculty evidence portfolio</p><h3 id="review-heading">Jordan Lee · Session review</h3></div><span class="review-status">Ready for faculty review</span></div>
+            <div class="review-grid">
+              <article class="workspace-card"><h4>Demonstrated understanding</h4><ul class="evidence-summary"><li><strong>Definition</strong><span>Distinguishes validity from factual truth.</span></li><li><strong>Application</strong><span>Constructs and explains a valid argument with a false premise.</span></li><li><strong>Distinction</strong><span>Recognizes that soundness requires true premises in addition to validity.</span></li></ul></article>
+              <article class="workspace-card"><h4>Unresolved evidence</h4><ul class="evidence-summary"><li class="pending"><strong>Revision</strong><span>No misconception required correction in this session.</span></li><li class="pending"><strong>Transfer</strong><span>A second unfamiliar case could strengthen confidence.</span></li></ul></article>
+              <article class="workspace-card wide"><h4>Faculty-facing decision snapshot</h4><p>The learner demonstrates the target distinction and applies it accurately in one novel example. The platform recommends faculty review of the transcript rather than an automatic grade.</p><div class="recommendation"><strong>Suggested follow-up</strong><span>Ask the learner to evaluate whether a valid argument with true premises can still be unsound.</span></div></article>
+            </div>
+            <div class="view-actions"><button class="advance" data-next="4" type="button">View provider architecture</button></div>
+          </section>
+
+          <section class="demo-view" id="view-4" aria-labelledby="provider-heading" hidden>
+            <div class="provider-layout">
+              <article class="workspace-card wide">
+                <p class="eyebrow">Provider boundary</p>
+                <h3 id="provider-heading">The educational workflow remains stable when the language model changes.</h3>
+                <div class="provider-flow"><div><strong>Knowledge pack</strong><span>Institution-defined</span></div><b>→</b><div class="core-node"><strong>Educational intelligence</strong><span>Private core</span></div><b>→</b><div><strong>Approved AI adapter</strong><span>Replaceable provider</span></div><b>→</b><div><strong>Evidence portfolio</strong><span>Faculty reviewed</span></div></div>
+              </article>
+              <aside class="workspace-card"><p class="eyebrow">Demonstration provider</p><h3>Mock service</h3><p>No model endpoint or credential is included in this public repository.</p><ul class="check-list"><li>Schema-constrained output</li><li>Server-side credentials in production</li><li>Model-independent evidence format</li><li>Deterministic fallback possible</li></ul></aside>
+            </div>
+            <div class="completion-banner"><strong>Phase 1 demonstration complete</strong><span>You have followed the institutional workflow from faculty setup to provider architecture.</span><button id="restart-demo" type="button">Restart demonstration</button></div>
+          </section>
         </div>
-        <div id="evidence" class="evidence-list">
-          <p class="empty-state">Evidence will appear as the fictional dialogue progresses.</p>
-        </div>
-        <div class="faculty-note">
-          <strong>Faculty review required</strong>
-          <p>This demonstration produces interpretable evidence, not an automatic grade or misconduct determination.</p>
-        </div>
-      </aside>
+      </div>
     </section>
 
     <section class="readiness" aria-labelledby="readiness-title">
@@ -158,13 +204,7 @@
 
   <footer>
     <p>Independent prototype. All names and records are fictional. © 2026 Benjamin Moss.</p>
-    <nav aria-label="Project documentation">
-      <a href="docs/differentiation.md">Differentiation</a>
-      <a href="docs/pilot-scope.md">Pilot scope</a>
-      <a href="docs/architecture.md">Architecture</a>
-      <a href="docs/governance.md">Governance</a>
-      <a href="docs/roadmap.md">Roadmap</a>
-    </nav>
+    <nav aria-label="Project documentation"><a href="docs/differentiation.md">Differentiation</a><a href="docs/pilot-scope.md">Pilot scope</a><a href="docs/architecture.md">Architecture</a><a href="docs/governance.md">Governance</a><a href="docs/roadmap.md">Roadmap</a></nav>
   </footer>
 
   <script src="app.js"></script>
