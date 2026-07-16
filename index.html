@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fictional institutional pilot for faculty-guided Socratic assessment.">
+  <title>Socratic Institutional Pilot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="#top">Socratic Institutional Pilot</a>
+    <span class="status">Independent fictional demonstration</span>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="eyebrow">Faculty-guided reasoning evidence</p>
+      <h1>Make learner understanding visible through structured dialogue.</h1>
+      <p class="lede">This functional demonstration shows how an institution-approved AI service could support a bounded Socratic assessment while faculty retain final academic judgment.</p>
+      <div class="actions">
+        <button id="start-demo" type="button">Start fictional dialogue</button>
+        <button id="reset-demo" class="secondary" type="button">Reset</button>
+      </div>
+      <p class="notice"><strong>Demonstration boundary:</strong> no real learners, institutional systems, proprietary reasoning logic, or production AI services are connected.</p>
+    </section>
+
+    <section class="workflow" aria-labelledby="workflow-title">
+      <div>
+        <p class="eyebrow">Proposed workflow</p>
+        <h2 id="workflow-title">One assessment, multiple kinds of evidence</h2>
+      </div>
+      <ol>
+        <li><span>1</span>Learner submits an initial explanation.</li>
+        <li><span>2</span>The system identifies what evidence is still needed.</li>
+        <li><span>3</span>A targeted Socratic question tests the concept.</li>
+        <li><span>4</span>Faculty review a transcript-grounded snapshot.</li>
+      </ol>
+    </section>
+
+    <section class="demo-grid" id="demo" aria-live="polite">
+      <article class="panel dialogue-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Learner view</p>
+            <h2>Validity and soundness</h2>
+          </div>
+          <span class="provider">Mock approved AI provider</span>
+        </div>
+        <div id="dialogue" class="dialogue">
+          <p class="empty-state">Select “Start fictional dialogue” to reveal the sample assessment.</p>
+        </div>
+      </article>
+
+      <aside class="panel evidence-panel" aria-labelledby="evidence-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Faculty view</p>
+            <h2 id="evidence-title">Evidence snapshot</h2>
+          </div>
+        </div>
+        <div id="evidence" class="evidence-list">
+          <p class="empty-state">Evidence will appear as the fictional dialogue progresses.</p>
+        </div>
+        <div class="faculty-note">
+          <strong>Faculty review required</strong>
+          <p>This demonstration produces interpretable evidence, not an automatic grade or misconduct determination.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="architecture" aria-labelledby="architecture-title">
+      <p class="eyebrow">Separation by design</p>
+      <h2 id="architecture-title">The institutional layer does not own the reasoning core.</h2>
+      <div class="architecture-grid">
+        <article><strong>Approved AI service</strong><span>Interprets and phrases bounded language tasks.</span></article>
+        <article><strong>Provider adapter</strong><span>Keeps the model replaceable and credentials private.</span></article>
+        <article><strong>Reasoning core</strong><span>Selects pedagogical moves and updates evidence privately.</span></article>
+        <article><strong>Faculty experience</strong><span>Presents transcript-linked evidence for human judgment.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Independent prototype. All names and records are fictional. © 2026 Benjamin Moss.</p>
+    <nav aria-label="Project documentation">
+      <a href="docs/pilot-scope.md">Pilot scope</a>
+      <a href="docs/architecture.md">Architecture</a>
+      <a href="docs/governance.md">Governance</a>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
