@@ -1,14 +1,32 @@
 # Socratic Institutional Pilot
 
-A functional, fictional institutional pilot demonstrating faculty-guided Socratic dialogue, reasoning evidence, and human-reviewed assessment workflows.
+**Educational intelligence for the AI era.**
 
-## Purpose
+This repository contains a functional, fictional institutional pilot demonstrating how an institution-approved language model could support faculty-guided Socratic assessment without becoming the assessment authority.
 
-This repository explores how an institution-approved AI service could support structured Socratic assessment without replacing faculty judgment. It is intended for demonstration, research discussion, and pilot planning.
+## Central thesis
+
+Institutions may already have capable AI services. What they still need is an educational architecture that turns language capability into a repeatable, curriculum-aligned, governed, and faculty-reviewable assessment process.
+
+> Institution-approved AI provides language intelligence. The Socratic Platform provides educational intelligence.
+
+The model is a replaceable component. The differentiated product is the surrounding system: pedagogical policy, learner-state tracking, evidence modeling, knowledge packs, stopping conditions, and faculty governance.
 
 ## Current status
 
 Independent prototype. No institution has approved, endorsed, or deployed this project. All course names, learner records, dialogue, and evidence are fictional.
+
+## Phase 0 foundation
+
+The current branch establishes:
+
+- the institutional problem and product thesis;
+- explicit differentiation from a general-purpose chatbot;
+- a provider-independent architecture;
+- the public/private intellectual-property boundary;
+- faculty-governance and fictional-data commitments;
+- one bounded validity-and-soundness demonstration;
+- a phased path toward a controlled institutional pilot.
 
 ## What the current build demonstrates
 
@@ -17,7 +35,8 @@ Independent prototype. No institution has approved, endorsed, or deployed this p
 - transcript-linked evidence for definition and application;
 - an instructor-facing evidence snapshot;
 - a replaceable institution-approved AI provider boundary;
-- explicit faculty review and governance language.
+- explicit faculty review and governance language;
+- why an institution needs more than access to a capable language model.
 
 ## What this repository does not contain
 
@@ -35,17 +54,19 @@ No package installation or build process is required. Clone or download the repo
 
 ## Documentation
 
+- [Why an institutional platform?](docs/differentiation.md)
 - [Pilot scope](docs/pilot-scope.md)
 - [Proposed architecture](docs/architecture.md)
 - [Governance principles](docs/governance.md)
+- [Pilot roadmap](docs/roadmap.md)
 
 ## Planned development
 
-1. Strengthen the interactive vertical slice and understanding map.
+1. Complete the functional vertical slice and live understanding map.
 2. Add a mock provider contract with schema validation.
-3. Add a fuller faculty decision snapshot and export.
+3. Expand the faculty evidence portfolio and export.
 4. Prepare a secure adapter boundary for an institution-approved AI sandbox.
-5. Evaluate authentication, data governance, and optional LMS integration only after approval.
+5. Evaluate authentication, data governance, accessibility, and optional LMS integration only after approval.
 
 ## Rights and permitted use
 
