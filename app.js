@@ -98,7 +98,6 @@ function showView(index) {
   });
   kickerEl.textContent = viewMeta[index][0];
   titleEl.textContent = viewMeta[index][1];
-  document.querySelector('#pilot').scrollIntoView({ behavior: 'smooth', block: 'start' });
   if (index === 3 && dialogueEl.childElementCount === 0) renderTurn(0, true);
 }
 
