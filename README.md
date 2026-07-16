@@ -16,27 +16,30 @@ The model is a replaceable component. The differentiated product is the surround
 
 Independent prototype. No institution has approved, endorsed, or deployed this project. All course names, learner records, dialogue, and evidence are fictional.
 
-## Phase 0 foundation
+## Phase 1 functional demonstration
 
-The current branch establishes:
+The current build provides a guided, end-to-end institutional workflow:
 
-- the institutional problem and product thesis;
+1. faculty configure a bounded assessment;
+2. a learner reviews the objective and submits a response;
+3. the dialogue progresses through targeted Socratic moves;
+4. the “Why this question?” panel explains the current educational decision;
+5. live evidence indicators update across the dialogue;
+6. faculty receive a transcript-grounded evidence portfolio;
+7. the provider-boundary view shows that the language model remains replaceable.
+
+The interaction is deterministic and uses fictional data. It demonstrates the institutional experience without exposing the proprietary reasoning core.
+
+## What this repository demonstrates
+
 - explicit differentiation from a general-purpose chatbot;
-- a provider-independent architecture;
-- the public/private intellectual-property boundary;
-- faculty-governance and fictional-data commitments;
-- one bounded validity-and-soundness demonstration;
-- a phased path toward a controlled institutional pilot.
-
-## What the current build demonstrates
-
+- curriculum-aligned assessment setup;
 - a bounded learner dialogue about validity and soundness;
-- a targeted follow-up based on an unmet evidence need;
-- transcript-linked evidence for definition and application;
-- an instructor-facing evidence snapshot;
+- visible pedagogical decisions tied to unmet evidence needs;
+- live indicators for definition, distinction, application, and revision;
+- a faculty-facing evidence portfolio and suggested follow-up;
 - a replaceable institution-approved AI provider boundary;
-- explicit faculty review and governance language;
-- why an institution needs more than access to a capable language model.
+- explicit faculty review and governance language.
 
 ## What this repository does not contain
 
@@ -52,6 +55,19 @@ The current branch establishes:
 
 No package installation or build process is required. Clone or download the repository and open `index.html` in a modern browser.
 
+## GitHub Pages deployment
+
+The site is designed for GitHub Pages using the repository root.
+
+1. Open **Settings → Pages**.
+2. Select **Deploy from a branch**.
+3. Choose `main` and `/root`.
+4. Save.
+
+After Phase 1 is merged, the expected public URL is:
+
+`https://noumena000.github.io/Socratic-Institutional-Pilot/`
+
 ## Documentation
 
 - [Why an institutional platform?](docs/differentiation.md)
@@ -59,12 +75,14 @@ No package installation or build process is required. Clone or download the repo
 - [Proposed architecture](docs/architecture.md)
 - [Governance principles](docs/governance.md)
 - [Pilot roadmap](docs/roadmap.md)
+- [Phase 1 acceptance criteria](docs/phase-1-acceptance.md)
+- [GitHub Pages deployment](docs/deployment.md)
 
-## Planned development
+## Next development
 
-1. Complete the functional vertical slice and live understanding map.
-2. Add a mock provider contract with schema validation.
-3. Expand the faculty evidence portfolio and export.
+1. Replace demonstration percentages with structured learner-state events from the private core.
+2. Add schema validation to the mock provider contract.
+3. Add faculty annotation and evidence export.
 4. Prepare a secure adapter boundary for an institution-approved AI sandbox.
 5. Evaluate authentication, data governance, accessibility, and optional LMS integration only after approval.
 
