@@ -10,12 +10,14 @@ const openReviewButton = document.querySelector('#open-review');
 const dialogueEl = document.querySelector('#dialogue');
 const decisionEl = document.querySelector('#decision-panel');
 const evidenceEl = document.querySelector('#evidence-bars');
+const traceEl = document.querySelector('#decision-trace');
 const turnCountEl = document.querySelector('#turn-count');
 
 const viewMeta = [
-  ['Faculty workspace', 'Assessment setup'],
+  ['Curriculum workspace', 'Module overview'],
+  ['Faculty configuration', 'Knowledge pack'],
   ['Learner workspace', 'Assessment launch'],
-  ['Structured dialogue', 'Live evidence collection'],
+  ['Structured dialogue', 'Educational decision trace'],
   ['Faculty workspace', 'Evidence portfolio'],
   ['Technical architecture', 'Provider boundary']
 ];
@@ -23,44 +25,60 @@ const viewMeta = [
 const turns = [
   {
     messages: [
-      ['Socratic coach', 'Can an argument be valid even when its conclusion is false? Explain your answer.', 'system'],
-      ['Fictional learner', 'Yes. Validity is about whether the conclusion follows from the premises, not whether the premises are actually true.', 'learner']
+      ['Socratic coach', 'State the Utilitarian recommendation and explain the principle that supports it.', 'system'],
+      ['Fictional learner', 'The hospital should choose the option that produces the greatest overall benefit. Utilitarianism evaluates actions by their consequences and asks us to consider everyone affected.', 'learner']
     ],
     decision: {
-      'Current objective': 'Distinguish validity from factual truth.',
-      'Observed evidence': 'Definition stated accurately.',
-      'Missing evidence': 'Application to a novel argument.',
-      'Pedagogical move': 'Request an example.'
+      'Current objective': 'Explain and apply the Utilitarian principle.',
+      'Observed evidence': 'Consequences and impartial consideration are identified.',
+      'Missing evidence': 'How competing benefits are compared.',
+      'Pedagogical move': 'Request clarification of utility.'
     },
-    evidence: { Definition: 78, Distinction: 62, Application: 18, Revision: 0 }
+    evidence: { Definition: 72, Application: 58, Objection: 0, Revision: 0 },
+    trace: 'Objective → principle stated → comparison method unclear → clarify utility'
   },
   {
     messages: [
-      ['Evidence need', 'The learner states the distinction, but has not yet demonstrated it through an example.', 'analysis'],
-      ['Socratic coach', 'Construct a valid argument with at least one false premise and explain why it remains valid.', 'system'],
-      ['Fictional learner', 'All planets are made of glass. Earth is a planet. Therefore, Earth is made of glass. The first premise is false, but the conclusion follows if both premises are assumed.', 'learner']
+      ['Socratic coach', 'What would count as the greatest overall benefit here, and why is helping more people not automatically the same as maximizing utility?', 'system'],
+      ['Fictional learner', 'The number of people matters, but so do the size and likelihood of the benefits. Several small benefits might not outweigh saving one life, so the outcomes must be compared rather than counted mechanically.', 'learner']
     ],
     decision: {
-      'Current objective': 'Apply validity independently of premise truth.',
-      'Observed evidence': 'A structurally valid example is supplied.',
-      'Missing evidence': 'Explicit distinction between validity and soundness.',
-      'Pedagogical move': 'Ask for conceptual comparison.'
+      'Current objective': 'Distinguish aggregate utility from simple head counting.',
+      'Observed evidence': 'Magnitude, likelihood, and distribution of benefit are considered.',
+      'Missing evidence': 'Response to a rights or justice objection.',
+      'Pedagogical move': 'Introduce a counterexample involving individual rights.'
     },
-    evidence: { Definition: 90, Distinction: 76, Application: 88, Revision: 0 }
+    evidence: { Definition: 88, Application: 82, Objection: 20, Revision: 0 },
+    trace: 'Clarification → misconception avoided → theory represented fairly → introduce objection'
   },
   {
     messages: [
-      ['Socratic coach', 'How would your example change if the argument were sound rather than merely valid?', 'system'],
-      ['Fictional learner', 'It would need to remain valid, but its premises would also need to be true. My example is valid but unsound because its first premise is false.', 'learner'],
-      ['Decision snapshot', 'The learner distinguishes validity from soundness and applies the distinction in a novel example. Faculty review is still required.', 'analysis']
+      ['Socratic coach', 'Suppose the greatest total benefit requires imposing a serious involuntary burden on one patient. Would maximizing utility still justify that choice?', 'system'],
+      ['Fictional learner', 'A strict act Utilitarian might say yes if the total benefit is genuinely greater, but that exposes a serious objection: the theory can permit unfair treatment or sacrifice individual rights.', 'learner']
     ],
     decision: {
-      'Current objective': 'Integrate validity and soundness.',
-      'Observed evidence': 'Definition, distinction, and application demonstrated.',
-      'Missing evidence': 'Optional transfer to another unfamiliar case.',
+      'Current objective': 'Evaluate a justice or rights objection.',
+      'Observed evidence': 'The learner identifies a conflict between utility and individual rights.',
+      'Missing evidence': 'Whether the initial recommendation should be defended or revised.',
+      'Pedagogical move': 'Request qualified revision.'
+    },
+    evidence: { Definition: 92, Application: 88, Objection: 86, Revision: 25 },
+    trace: 'Counterexample → rights conflict recognized → unresolved commitment → request revision'
+  },
+  {
+    messages: [
+      ['Socratic coach', 'Revise or defend your original recommendation in light of that objection.', 'system'],
+      ['Fictional learner', 'I would qualify my answer. Consequences remain central, but the hospital should not treat aggregate benefit as the only consideration without safeguards for rights and fair procedures. This is a limitation of simple act Utilitarian reasoning.', 'learner'],
+      ['Decision snapshot', 'Required evidence has been observed. Prepare a transcript-linked portfolio for faculty review.', 'analysis']
+    ],
+    decision: {
+      'Current objective': 'Defend or revise the initial judgment.',
+      'Observed evidence': 'The learner qualifies the conclusion and identifies a limitation.',
+      'Missing evidence': 'Optional transfer to another ethical framework.',
       'Pedagogical move': 'Stop and prepare faculty evidence.'
     },
-    evidence: { Definition: 96, Distinction: 94, Application: 92, Revision: 0 }
+    evidence: { Definition: 95, Application: 92, Objection: 93, Revision: 90 },
+    trace: 'Revision requested → qualification supplied → stopping conditions met → faculty review'
   }
 ];
 
@@ -81,7 +99,7 @@ function showView(index) {
   kickerEl.textContent = viewMeta[index][0];
   titleEl.textContent = viewMeta[index][1];
   document.querySelector('#pilot').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  if (index === 2 && dialogueEl.childElementCount === 0) renderTurn(0, true);
+  if (index === 3 && dialogueEl.childElementCount === 0) renderTurn(0, true);
 }
 
 function createMessage([role, text, type]) {
@@ -130,12 +148,26 @@ function renderEvidence(evidence) {
   });
 }
 
+function renderTrace(index) {
+  traceEl.replaceChildren();
+  turns.slice(0, index + 1).forEach((turn, i) => {
+    const item = document.createElement('li');
+    const marker = document.createElement('span');
+    marker.textContent = String(i + 1);
+    const text = document.createElement('p');
+    text.textContent = turn.trace;
+    item.append(marker, text);
+    traceEl.append(item);
+  });
+}
+
 function renderTurn(index, replace = false) {
   currentTurn = index;
   if (replace) dialogueEl.replaceChildren();
   turns[index].messages.forEach(message => dialogueEl.append(createMessage(message)));
   renderDecision(turns[index].decision);
   renderEvidence(turns[index].evidence);
+  renderTrace(index);
   turnCountEl.textContent = `Turn ${index + 1} of ${turns.length}`;
   const finalTurn = index === turns.length - 1;
   nextTurnButton.disabled = finalTurn;
@@ -148,6 +180,7 @@ function resetDemo() {
   dialogueEl.replaceChildren();
   decisionEl.replaceChildren();
   evidenceEl.replaceChildren();
+  traceEl.replaceChildren();
   nextTurnButton.disabled = false;
   nextTurnButton.textContent = 'Continue dialogue';
   openReviewButton.disabled = true;
@@ -161,7 +194,7 @@ document.querySelectorAll('.advance').forEach(button => {
 steps.forEach(step => {
   step.querySelector('button').addEventListener('click', () => {
     const requested = Number(step.dataset.step);
-    if (requested <= currentView || steps[requested].classList.contains('complete')) showView(requested);
+    if (requested <= currentView || step.classList.contains('complete')) showView(requested);
   });
 });
 
