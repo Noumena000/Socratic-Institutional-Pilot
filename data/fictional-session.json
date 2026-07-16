@@ -1,0 +1,30 @@
+{
+  "notice": "Fictional demonstration data only",
+  "course": "Foundations of Critical Reasoning",
+  "assessment": "Validity and Soundness Dialogue",
+  "learner": "Jordan Lee",
+  "initialPrompt": "Can an argument be valid even when its conclusion is false? Explain your answer.",
+  "initialResponse": "Yes. Validity is about whether the conclusion follows from the premises, not whether the premises are actually true.",
+  "followUp": "Construct a valid argument with at least one false premise and explain why it remains valid.",
+  "followUpResponse": "All planets are made of glass. Earth is a planet. Therefore, Earth is made of glass. The first premise is false, but the conclusion follows if both premises are assumed.",
+  "evidence": [
+    {
+      "dimension": "Definition",
+      "status": "demonstrated",
+      "basis": "Learner distinguishes validity from factual truth.",
+      "turn": 1
+    },
+    {
+      "dimension": "Application",
+      "status": "demonstrated",
+      "basis": "Learner constructs and explains a valid argument with a false premise.",
+      "turn": 2
+    },
+    {
+      "dimension": "Revision",
+      "status": "not-yet-observed",
+      "basis": "The current exchange did not require revision.",
+      "turn": null
+    }
+  ]
+}
