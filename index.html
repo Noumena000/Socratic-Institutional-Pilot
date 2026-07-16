@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fictional institutional pilot for faculty-guided Socratic assessment.">
+  <meta name="description" content="A fictional institutional pilot showing how approved AI can support faculty-guided Socratic assessment.">
   <title>Socratic Institutional Pilot</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,19 +11,88 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <a class="brand" href="#top">Socratic Institutional Pilot</a>
+    <nav aria-label="Primary navigation">
+      <a href="#why">Why a platform?</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#demo">Demo</a>
+    </nav>
     <span class="status">Independent fictional demonstration</span>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <p class="eyebrow">Faculty-guided reasoning evidence</p>
-      <h1>Make learner understanding visible through structured dialogue.</h1>
-      <p class="lede">This functional demonstration shows how an institution-approved AI service could support a bounded Socratic assessment while faculty retain final academic judgment.</p>
+      <p class="eyebrow">Educational intelligence for the AI era</p>
+      <h1>Institutions already have AI. They still need an assessment architecture.</h1>
+      <p class="lede">The Socratic Platform turns an institution-approved language model into a structured, faculty-governed process for eliciting and reviewing evidence of learner understanding.</p>
       <div class="actions">
-        <button id="start-demo" type="button">Start fictional dialogue</button>
-        <button id="reset-demo" class="secondary" type="button">Reset</button>
+        <a class="button" href="#demo">Explore the fictional pilot</a>
+        <a class="button secondary" href="docs/architecture.md">View the architecture</a>
       </div>
       <p class="notice"><strong>Demonstration boundary:</strong> no real learners, institutional systems, proprietary reasoning logic, or production AI services are connected.</p>
+    </section>
+
+    <section class="thesis" aria-labelledby="thesis-title">
+      <p class="eyebrow">The central distinction</p>
+      <h2 id="thesis-title">Language intelligence is not the same as educational intelligence.</h2>
+      <div class="thesis-grid">
+        <article>
+          <span class="number">01</span>
+          <h3>Institution-approved AI</h3>
+          <p>Interprets language, generates explanations, phrases questions, and summarizes bounded information.</p>
+        </article>
+        <article>
+          <span class="number">02</span>
+          <h3>Socratic educational layer</h3>
+          <p>Defines the evidence need, selects the pedagogical move, tracks learner state, and preserves faculty authority.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="comparison" id="why" aria-labelledby="why-title">
+      <div class="section-heading">
+        <p class="eyebrow">Why not just use a chatbot?</p>
+        <h2 id="why-title">A capable model can converse. An institution needs a repeatable and governed assessment process.</h2>
+        <p>This distinction does not diminish the value of an institutional AI service. The platform makes that service more educationally useful by surrounding it with curriculum, policy, evidence, and review.</p>
+      </div>
+      <div class="comparison-grid">
+        <article>
+          <h3>General or institution-approved AI</h3>
+          <ul>
+            <li>Generates and interprets language</li>
+            <li>Responds to an individual prompt</li>
+            <li>Supports open-ended conversation</li>
+            <li>Explains or summarizes content</li>
+            <li>Depends on the selected model</li>
+          </ul>
+        </article>
+        <article class="emphasis">
+          <h3>Socratic institutional platform</h3>
+          <ul>
+            <li>Operates against explicit learning objectives</li>
+            <li>Selects pedagogical moves from unmet evidence needs</li>
+            <li>Tracks understanding, contradiction, and revision</li>
+            <li>Links claims about learning to transcript evidence</li>
+            <li>Preserves the workflow across AI providers</li>
+          </ul>
+        </article>
+      </div>
+      <p class="claim">This is not another chatbot. It is a provider-independent educational intelligence layer for structured dialogue, evidence modeling, and faculty-guided judgment.</p>
+    </section>
+
+    <section class="architecture" id="architecture" aria-labelledby="architecture-title">
+      <p class="eyebrow">Provider independent by design</p>
+      <h2 id="architecture-title">The model is a component. The educational workflow is the product.</h2>
+      <div class="architecture-flow" aria-label="Proposed institutional architecture">
+        <article><strong>Learning objectives</strong><span>Faculty-defined concepts, distinctions, applications, and evidence requirements.</span></article>
+        <span class="arrow" aria-hidden="true">↓</span>
+        <article><strong>Knowledge pack</strong><span>Curriculum-specific definitions, misconceptions, cases, and review criteria.</span></article>
+        <span class="arrow" aria-hidden="true">↓</span>
+        <article class="core"><strong>Educational intelligence layer</strong><span>Private reasoning policy, learner state, evidence updates, and stopping conditions.</span></article>
+        <span class="arrow" aria-hidden="true">↓</span>
+        <article><strong>Institution-approved AI</strong><span>Bounded response interpretation, extraction, phrasing, and summarization.</span></article>
+        <span class="arrow" aria-hidden="true">↓</span>
+        <article><strong>Evidence portfolio</strong><span>Transcript-linked evidence, unresolved gaps, and faculty-facing review.</span></article>
+      </div>
     </section>
 
     <section class="workflow" aria-labelledby="workflow-title">
@@ -35,7 +104,8 @@
         <li><span>1</span>Learner submits an initial explanation.</li>
         <li><span>2</span>The system identifies what evidence is still needed.</li>
         <li><span>3</span>A targeted Socratic question tests the concept.</li>
-        <li><span>4</span>Faculty review a transcript-grounded snapshot.</li>
+        <li><span>4</span>The understanding map updates across turns.</li>
+        <li><span>5</span>Faculty review a transcript-grounded snapshot.</li>
       </ol>
     </section>
 
@@ -50,6 +120,10 @@
         </div>
         <div id="dialogue" class="dialogue">
           <p class="empty-state">Select “Start fictional dialogue” to reveal the sample assessment.</p>
+        </div>
+        <div class="panel-actions">
+          <button id="start-demo" type="button">Start fictional dialogue</button>
+          <button id="reset-demo" class="secondary" type="button">Reset</button>
         </div>
       </article>
 
@@ -70,14 +144,14 @@
       </aside>
     </section>
 
-    <section class="architecture" aria-labelledby="architecture-title">
-      <p class="eyebrow">Separation by design</p>
-      <h2 id="architecture-title">The institutional layer does not own the reasoning core.</h2>
-      <div class="architecture-grid">
-        <article><strong>Approved AI service</strong><span>Interprets and phrases bounded language tasks.</span></article>
-        <article><strong>Provider adapter</strong><span>Keeps the model replaceable and credentials private.</span></article>
-        <article><strong>Reasoning core</strong><span>Selects pedagogical moves and updates evidence privately.</span></article>
-        <article><strong>Faculty experience</strong><span>Presents transcript-linked evidence for human judgment.</span></article>
+    <section class="readiness" aria-labelledby="readiness-title">
+      <p class="eyebrow">Institutional readiness</p>
+      <h2 id="readiness-title">A production pilot requires educational and technical governance.</h2>
+      <div class="readiness-grid">
+        <article><strong>Faculty authority</strong><span>Human review remains necessary for academic decisions.</span></article>
+        <article><strong>Approved provider</strong><span>Credentials and model calls remain behind a secure adapter.</span></article>
+        <article><strong>Privacy and access</strong><span>Authentication, retention, roles, and audit logs precede real learner use.</span></article>
+        <article><strong>Evidence validation</strong><span>The institution evaluates alignment, consistency, accessibility, and usefulness.</span></article>
       </div>
     </section>
   </main>
@@ -85,9 +159,11 @@
   <footer>
     <p>Independent prototype. All names and records are fictional. © 2026 Benjamin Moss.</p>
     <nav aria-label="Project documentation">
+      <a href="docs/differentiation.md">Differentiation</a>
       <a href="docs/pilot-scope.md">Pilot scope</a>
       <a href="docs/architecture.md">Architecture</a>
       <a href="docs/governance.md">Governance</a>
+      <a href="docs/roadmap.md">Roadmap</a>
     </nav>
   </footer>
 
