@@ -1,40 +1,76 @@
-# Pilot Roadmap
+# Institutional Pilot Roadmap
 
-## Foundation
+## Phase 0 — Foundation
 
-- Public institutional workflow demonstration
-- Fictional data only
-- Proprietary boundary and governance documentation
-- Accessible static browser experience
+**Goal:** establish the product thesis, public boundaries, architecture, governance, and evaluation criteria.
 
-## Functional vertical slice
+Deliverables:
 
-- Learner enters an original response
-- Mock provider returns a validated reasoning event
-- Pedagogical policy selects a follow-up move
-- Learner state updates across turns
-- Evidence remains linked to transcript turns
-- Faculty can export a decision snapshot
+- institutional problem statement;
+- explicit differentiation from a general AI chatbot;
+- provider-independent architecture;
+- public/private intellectual-property boundary;
+- fictional-data and faculty-governance commitments;
+- one defined vertical-slice assessment;
+- readiness criteria for the next phase.
 
-## Approved AI proof of concept
+Phase 0 does not include a production AI connection, learner authentication, institutional data, automated grades, or LMS integration.
 
-- Replace the mock provider through a server-side adapter
-- Use sandbox or fictional data first
-- Confirm schema-constrained responses
-- Document model version, errors, and fallbacks
-- Complete privacy, security, and accessibility review
+## Phase 1 — Functional demonstration
 
-## Controlled institutional pilot
+**Goal:** demonstrate one end-to-end fictional assessment workflow.
 
-- Authentication and role-based access
-- Approved hosting and encrypted storage
-- Retention and deletion rules
-- Instructor dashboard and audit trail
-- Defined pilot population and evaluation plan
+The learner experience should show:
 
-## Later integration
+1. an initial prompt;
+2. a learner response;
+3. an identified evidence need;
+4. a targeted Socratic follow-up;
+5. a second learner response;
+6. an updated understanding map;
+7. a faculty-facing evidence snapshot.
 
-- Optional LMS launch through an approved standard
-- Assignment and roster context
-- Faculty-controlled report return
-- Grade workflow only after validity, reliability, and governance review
+The demonstration may use deterministic or simulated outputs, but it must clearly distinguish the pedagogical decision from the language-provider function.
+
+## Phase 2 — Provider proof of concept
+
+**Goal:** connect a sandboxed institution-approved provider through a narrow adapter.
+
+Requirements:
+
+- no credentials in client-side code;
+- schema-constrained requests and responses;
+- validation and safe failure behavior;
+- fictional or approved sandbox data only;
+- model and request audit metadata;
+- deterministic fallback for the demonstration.
+
+## Phase 3 — Controlled institutional pilot
+
+**Goal:** evaluate the educational workflow with a small approved population.
+
+Requirements include authentication, role-based access, data-retention rules, accessibility testing, audit logs, faculty training, learner disclosure, support ownership, and defined evaluation measures.
+
+## Phase 4 — Optional institutional integration
+
+Potential capabilities after educational and governance validation:
+
+- LMS launch through an approved standard;
+- assignment and roster context;
+- faculty dashboard and report export;
+- institution-approved storage;
+- optional faculty-confirmed grade workflow;
+- aggregate pilot analytics.
+
+## Success measures
+
+A pilot should evaluate more than technical completion. Possible measures include:
+
+- whether the dialogue elicits evidence not visible in the initial submission;
+- whether faculty can understand and verify the evidence snapshot;
+- whether follow-up questions align with course objectives;
+- whether the system identifies uncertainty without overstating conclusions;
+- learner and faculty accessibility;
+- time required for faculty review;
+- consistency across equivalent learner responses;
+- incidence and handling of unsupported model output.
